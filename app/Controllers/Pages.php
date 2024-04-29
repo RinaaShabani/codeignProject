@@ -1,12 +1,12 @@
 <?php
 
-namespace Spp\Controllers;
+namespace App\Controllers;
 
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Pages extends BaseController
 {
-    public function index()
+    public function index(): string
     {
         return view('welcome_message');
     }
@@ -19,8 +19,8 @@ class Pages extends BaseController
 
         $data['title'] = ucfirst($page);
 
-        return view('template/header', $data)
+        return view('templates/header', $data)
             . view('pages/' . $page)
-            . view('template/footer');
+            . view('templates/footer');
     }
 }
